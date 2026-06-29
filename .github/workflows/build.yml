@@ -2,17 +2,21 @@ name: Java Build Using Composite Action
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
+
   build:
+
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Run Java Build Composite Action
+      - name: Run Composite Action
         uses: ./.github/actions/java-build
         with:
-          java-version: '17'
+          java-version: "17"
